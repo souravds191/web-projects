@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en-US">
-   
-  <head>
-    <meta charset="utf-8" />
-    <!-- <h1 style="text-align:left">Booking App</h1> -->
-    <title>My test page</title>
-    <link rel = "stylesheet" href = "style.css" type="text/css" />
-  </head>
-  <body>
-   
-    <!-- <img src="images/pexels-arshad-sutar-1749303.jpg" alt="My test image" /> -->
-    <form action="#">
-      <div>
-        <label>User Name</label><br>
-        <input type ="text" id="user_name" required/>
-      </div>
-      <div>
-        <label>Email</label><br>
-        <input type = "email" id="email_id"/>
-      </div>
-      <div>
-        <label>Date & Time</label><br>
-        <input type = "date" id="date"/>
-        <input type = "time" id="time"/><br><br>
-      </div>
-      <button type="submit" onclick="onSubmit()" class="btn btn-default">Submit</button>
-    </form>
-    <script type="text/javaScript">
-      function onSubmit() {
-        var username_1=document.getElementById("user_name").value;
-        var emailid=document.getElementById("email_id").value;
-        var date_1=document.getElementById("date").value;
-        var time_1=document.getElementById("time").value;
 
-        localStorage.setItem('is_user_name', username_1)
-        localStorage.setItem('is_email', emailid)
-        localStorage.setItem('Date',date_1)
-        localStorage.setItem('Time', time_1)
+<head>
+  <meta charset="utf-8" />
+  <!-- <h1 style="text-align:left">Booking App</h1> -->
+  <title>My test page</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+  <!-- <img src="images/pexels-arshad-sutar-1749303.jpg" alt="My test image" /> -->
+  <form action="#">
+    <div>
+      <label>User Name</label><br />
+      <input type="text" id="user_name" required />
+    </div>
+    <div>
+      <label>Email</label><br />
+      <input type="email" id="email_id" />
+    </div>
+    <div>
+      <label>Date & Time</label><br />
+      <input type="date" id="date" />
+      <input type="time" id="time" /><br /><br />
+    </div>
+    <button type="submit" onclick="onSubmit()" class="btn btn-default">
+      Submit
+    </button>
+  </form>
+  <script type="text/javaScript">
+      function onSubmit() {
+          var username=document.getElementById("user_name").value;
+          var emailid=document.getElementById("email_id").value;
+          var date_1=document.getElementById("date").value;
+          var time_1=document.getElementById("time").value;
+
+        const obj=
+        {
+          username,
+          emailid,
+          date_1,
+          time_1
+        }
+        localStorage.setItem('userDetails', JSON.stringify(obj));
+        // JSON.parse(localStorage.getItem(obj));
+        // localStorage.setItem('is_email', emailid)
+        // localStorage.setItem('Date',date_1)
+        // localStorage.setItem('Time', time_1)
       }
-      
     </script>
-  </body>
+</body>
+
 </html>
