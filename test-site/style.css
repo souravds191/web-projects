@@ -1,4 +1,4 @@
-* {
+*{
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;	
@@ -6,11 +6,10 @@
 }
 
 body {
-	background: linear-gradient(90deg, #a6bf86, #776BCC);	
+	background: linear-gradient(90deg, #a1cd68, #776BCC);	
     min-height: 100vh;
     display: flex;
     align-items: center;
 	justify-content: center;
 	
 }
-
