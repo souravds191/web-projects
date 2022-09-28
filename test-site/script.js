@@ -30,9 +30,24 @@ mybtn.onclick=function(){
                     <tr>
                         <td>${data.username}</td>
                         <td>${data.emailid}</td>
+                        <td><button onclick = deleteuser('${data.emailid}')>Delete</button></td>
+                        <td><button onclick = edituser('${data.emailid}')>Edit</button></td>
                     </tr>
             `;
         });                
     }
 }
 dispData();
+function deleteUser(emailid){
+    console.log(emailid)
+    localStorage.removeItem(emailid);
+    removeUserFromScreen(emailid);
+
+}
+
+function removeUserFromScreen(emailid){
+    const parentNode = document.getElementById('output');
+    const childNodeToBeDeleted = document.getElementById(emailid);
+
+    parentNode.removeChild(childNodeToBeDeleted)
+}
